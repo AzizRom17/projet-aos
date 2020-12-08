@@ -10,15 +10,18 @@ import java.util.Set;
 @Data
 @Entity
 
-public class Etude {
+public class Formation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Long id_etude;
+    private Long id_formation;
 
 
     @ManyToMany
     private Set<Cv> Cvs = new HashSet<>();
+
+    @OneToMany(mappedBy = "id_justificatif")
+    private Set<Justificatif> justificatifs;
 /*
     @ManyToOne
     @JoinColumn(name = "id_cv" )

@@ -3,6 +3,7 @@ package tn.isg.projet.ElectionTunisie.model;
 import lombok.*;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @Entity
@@ -13,12 +14,14 @@ public class Reclamation {
     private Long id_rec;
     @NonNull
     private String Sujet;
-    @NonNull
-    private String justif_rec;
+
 
     @ManyToOne
     @JoinColumn(name = "id_candidat")
     private Candidat son_candidat;
+
+    @OneToMany(mappedBy = "id_justificatif")
+    private Set<Justificatif> justificatifs;
 
 /*
     @ManyToOne

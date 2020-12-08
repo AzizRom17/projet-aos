@@ -8,12 +8,10 @@ import javax.persistence.*;
 @Data
 @Entity
 
-public class User {
+public class Electeur {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_user;
+    private Long id_electeur;
 
-    private String login;
 
-    private String mdp;
 
 }

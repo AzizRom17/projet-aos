@@ -21,6 +21,14 @@ public class Justificatif {
     @ManyToOne
     @JoinColumn(name = "activite_id" )
     private Activite Activite_justif;
+
+    @ManyToOne
+    @JoinColumn(name = "reclamation_id")
+    private Reclamation reclamation_justif;
+
+    @ManyToOne
+    @JoinColumn(name = "formation_id")
+    private Formation formation_justif;
  /*   @ManyToOne
     private Activite activite_justif;*/
 }
