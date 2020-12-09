@@ -17,7 +17,7 @@ public class Candidat {
     private String nom;
     @NonNull
     private String prenom;
-    @NonNull
+
     private Date date_naiss;
     private String parti;
     private int score;
@@ -25,6 +25,7 @@ public class Candidat {
     private byte photo;
     private String facebook;
     private String Twitter;
+
 
     @OneToOne
     private Cv son_cv;
