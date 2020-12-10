@@ -9,12 +9,12 @@ import java.util.Set;
 
 @Data
 @Entity
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class Avis {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_avis;
+    @EmbeddedId
+    private AvisId id_avis;
     @NonNull
     private String nom;
     @NonNull
@@ -30,14 +30,21 @@ public class Avis {
         this.commentaire = commentaire;
     }
 
-    @ManyToOne
+/*    @ManyToOne
     @JoinColumn(name="candidat_id")
-    private Candidat sonCandidat;
+    private Candidat sonCandidat;*/
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @MapsId("electeurId")
+    private Electeur elec;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @MapsId("candidatId")
+    private Candidat candi;
+}
 
 
     /*@ManyToOne
     @JoinColumn(name = "id_candidat")
     private Candidat candidat_a;
 */
-}
+

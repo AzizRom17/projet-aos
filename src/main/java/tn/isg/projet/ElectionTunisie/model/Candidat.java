@@ -3,6 +3,7 @@ package tn.isg.projet.ElectionTunisie.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -21,8 +22,8 @@ public class Candidat {
     private Date date_naiss;
     private String parti;
     private int score;
-    @Lob
-    private byte photo;
+   // @Lob
+    //private byte photo;
     private String facebook;
     private String Twitter;
 
@@ -33,8 +34,8 @@ public class Candidat {
     @OneToMany(mappedBy = "son_candidat", cascade = CascadeType.ALL)
     private Set<Reclamation> reclamations = new HashSet<>();
 
-    @OneToMany(mappedBy = "sonCandidat", cascade = CascadeType.ALL)
-    private Set<Avis> sonavis = new HashSet<>();
+    @OneToMany(mappedBy = "candi")
+    private Collection<Avis> avis;
 
     @ManyToOne
     @JoinColumn(name = "id_Liste")

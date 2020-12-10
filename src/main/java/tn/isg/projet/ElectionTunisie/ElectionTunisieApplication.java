@@ -27,8 +27,7 @@ public class ElectionTunisieApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
-		Avis avis1 = new Avis("a","a","a");
-		AvisRepository.save(avis1);
+
 
 	}
 }
