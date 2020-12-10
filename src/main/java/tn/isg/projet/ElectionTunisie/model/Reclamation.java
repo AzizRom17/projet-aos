@@ -23,6 +23,9 @@ public class Reclamation {
     @OneToMany(mappedBy = "id_justificatif")
     private Set<Justificatif> justificatifs;
 
+    public Reclamation()
+    {super();}
+
 /*
     @ManyToOne
     @JoinColumn(name = "id_candidat")

@@ -1,13 +1,14 @@
 package tn.isg.projet.ElectionTunisie.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import tn.isg.projet.ElectionTunisie.metiers.IReclamation;
 import tn.isg.projet.ElectionTunisie.model.Reclamation;
 import tn.isg.projet.ElectionTunisie.repository.ReclamationRepository;
 
 import java.util.Collection;
 import java.util.Optional;
-
+@Service
 public class ReclamationImp implements IReclamation {
 
     @Autowired

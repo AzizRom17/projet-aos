@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Data
-@NoArgsConstructor
+
 @RequiredArgsConstructor
 @Entity
 public class ListeDeCandidats {
@@ -32,7 +32,8 @@ public class ListeDeCandidats {
             joinColumns = @JoinColumn(name = "id_liste",referencedColumnName = "id_liste"),
             inverseJoinColumns = @JoinColumn(name = "id_parti",referencedColumnName = "id_parti"))
     private Set<Parti> partis = new HashSet<>();
-
+public ListeDeCandidats()
+{super();}
   /*  @OneToMany(mappedBy = "sa_liste", cascade =CascadeType.ALL)
     private Set<Candidat> membres=new HashSet<>();
 
